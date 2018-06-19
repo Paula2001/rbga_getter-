@@ -32,8 +32,10 @@ class Slider extends ColorBox { //slider class
         for(let x = 0; x < this.slide.length ; x++) {
             arr.push(this.slide[x].value);
         }
+        console.log("developed : by Paula George")
         this.box.style.backgroundColor = "rgba(" + arr.join(',') + ")";
-        console.log(arr);
+        document.getElementById("color_holder").innerHTML = `background-color: rgba(${arr.join(" , ")}); `;
+
     }
 
 

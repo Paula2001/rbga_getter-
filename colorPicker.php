@@ -79,6 +79,16 @@
     .color:nth-last-child(2)::-moz-range-thumb {
         background-color: blue;
     }
+    #color_holder{
+        position: absolute;
+        top: 40%;
+        font-size: 15px;
+        font-family: "Arial Black";
+        left: 2%;
+        background-color: rgba(50 , 255 , 214 , 0.1);
+        padding: 5px;
+        border-radius: 20%;
+    }
 
 </style>
 
@@ -86,8 +96,12 @@
 <body>
 <div id="main">
 <form id="color_container">
+
 </form>
-<div id="color"></div>
+<div id="color">
+    <p id="color_holder"></p>
+</div>
+
 </div>
 <script src="script.js"></script>
 </body>
