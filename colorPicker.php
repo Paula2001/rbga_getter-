@@ -13,6 +13,7 @@
     height: 100%;
     max-height: 400px;
     position: absolute;
+    border: white solid thick;
     border-radius: 40%;
     left: 0;
     right: 0;
@@ -27,6 +28,7 @@
     .color {
         -webkit-appearance: none;
         height: 15px;
+        margin: 15px;
         border-radius: 5px;
         background: #d3d3d3;
         outline: none;
