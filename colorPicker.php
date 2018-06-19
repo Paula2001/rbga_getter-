@@ -8,38 +8,84 @@
         background-attachment: fixed;
     }
 #color {
-    width: 200px;
-    height: 200px;
+    max-width: 400px;
+    width: 50%;
+    height: 100%;
+    max-height: 400px;
     position: absolute;
-    left:40%;
+    border-radius: 40%;
+    left: 0;
+    right: 0;
+    margin: auto
 }
     #main {
         position: relative;
+        width: 100%;
+        height: 100%;
 
     }
-    .color{
-        -webkit-appearance: none;  /* Override default CSS styles */
-        appearance: none;
-        display: block;
-        margin: 4px;
-        height: 25px; /* Specified height */
-        background: none; /* Grey background */
-        outline: none; /* Remove outline */
-        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    .color {
+        -webkit-appearance: none;
+        height: 15px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
         transition: opacity .2s;
-
     }
-    .color:hover{
+
+    .color:hover {
         opacity: 1;
     }
+
+    .color::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: cyan;
+        cursor: pointer;
+    }
+
+
+    .color::-moz-range-thumb {
+        width: 30px;
+        height: 30px;
+        background-color: cyan;
+        border: none;
+        border-radius: 40%;
+        cursor: pointer;
+    }
+    .color:nth-last-child(4)::-moz-range-thumb  {
+        background-color: red;
+    }
+    .color:nth-last-child(4)::-webkit-slider-thumb{
+        background-color:red;
+    }
+    .color:nth-last-child(3)::-webkit-slider-thumb{
+        background-color:green;
+    }
+
+    .color:nth-last-child(2)::-webkit-slider-thumb{
+        background-color:blue;
+    }
+
+    .color:nth-last-child(3)::-moz-range-thumb {
+        background-color: green;
+    }
+
+    .color:nth-last-child(2)::-moz-range-thumb {
+        background-color: blue;
+    }
+
 </style>
 
 </head>
 <body>
 <div id="main">
 <form id="color_container">
-
 </form>
 <div id="color"></div>
 </div>
