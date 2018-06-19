@@ -3,39 +3,40 @@ class ColorBox { //color area class
     constructor(){
         this.box = document.getElementById("color") ;
         this.color = window.getComputedStyle(document.getElementById("color")).getPropertyValue("background-color");
-
-
-    }
-    get(event) {
-        let coordinets = event.clientY ;
-        console.log(coordinets / 10)
-        this.box.style.backgroundColor = coordinets / 2 ,200 ,64, 64;
+        this.container = document.getElementById("color_container");
     }
 }
 class Slider extends ColorBox { //slider class
     constructor(){
         super();
-        this.r = document.getElementById("r");
-        this.b = document.getElementById("b");
-        this.g = document.getElementById("g");
-        this.a = document.getElementById("a");
 
+    }
+    createDiv(){
+        for (let x = 0; x < 4; x++) {
+            var create = document.createElement("input");
+            create.type = "range";
+            create.className = "color";
+            this.container.appendChild(create);
+        }
     }
     getValue(){
-        this.box.style.backgroundColor = "rgba(" + [this.r.value,this.b.value,this.g.value,this.a.value].join(',') +")";
-
-
+        let arr = new Array();
+        this.slide = document.getElementsByClassName("color");
+        for(let x = 0; x < 4 ; x++) {
+            arr.push(this.slide[x].value);
+        }
+        this.box.style.backgroundColor = "rgba(" + arr.join(',') + ")";
+        console.log(arr);
     }
-   /* getValue(ele){
-        this.element = document.getElementById(`${ele}`);
-        console.log(this.element.value);
-        if (ele === "r") {}
-        this.box.style.backgroundColor = "rgba(" + [this.element.value,this.element.value,100,2].join(',') +")";
 
-    }*/
+
 }
 let slide = new Slider();
 let box = new ColorBox();
+slide.createDiv();
+slide.getValue() ;
+
+
 
 
 
